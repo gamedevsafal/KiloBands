@@ -14,9 +14,9 @@ app.use(cors());
 app.use(express.static(__dirname));
 
 const songs = [
-  { id: 1, title: 'Song 1', artist: 'Artist 1', filename: 'song1.mp3' },
-  { id: 2, title: 'Song 2', artist: 'Artist 2', filename: 'song2.mp3' },
-  { id: 3, title: 'Song 3', artist: 'Artist 3', filename: 'song3.mp3' },
+  { id: 1, title: 'Song 1', artist: 'Artist 1', filename: 'song1.mp3', price: 0.99 },
+  { id: 2, title: 'Song 2', artist: 'Artist 2', filename: 'song2.mp3', price: 0.99 },
+  { id: 3, title: 'Song 3', artist: 'Artist 3', filename: 'song3.mp3', price: 0.99 },
 ];
 
 
@@ -45,6 +45,16 @@ app.get('/api/download/:filename', (req, res) => {
       res.status(404).json({ message: 'File not found' });
     }
   });
+});
+
+app.get('/api/music/:filename', (req, res) => {
+    const { filename } = req.params;
+    const filePath = path.join(__dirname, 'public', 'music', filename);
+    res.sendFile(filePath, (err) => {
+        if (err) {
+            res.status(404).json({ message: 'File not found' });
+        }
+    });
 });
 
 app.listen(port, () => {

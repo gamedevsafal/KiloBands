@@ -1,47 +1,28 @@
-# Music Store Backend
+# KiloBands Music Store
 
-This is a simple Node.js and Express backend for a school project.
+This is a simple music store application built with HTML, CSS, JavaScript, and Node.js.
 
-## Folder Structure
+## Features
 
-```
-.
-├── public
-│   └── music
-│       ├── song1.mp3
-│       ├── song2.mp3
-│       └── song3.mp3
-├── package.json
-└── server.js
-```
+- Browse a list of songs.
+- Preview songs before adding them to the cart.
+- Add songs to a shopping cart.
+- A checkout page to view the cart and "purchase" the songs.
+- Download songs after checkout.
+- A contact form to send messages.
 
 ## How to Run
 
-1. **Install dependencies:**
+1. Clone the repository.
+2. Run `npm install` to install the dependencies.
+3. Run `node server.js` to start the server.
+4. Open your browser and navigate to `http://localhost:4000`.
 
-   ```bash
-   npm install
-   ```
+## Technologies Used
 
-2. **Start the server:**
-
-   ```bash
-   npm start
-   ```
-
-   The server will be running on `http://localhost:4000`.
-
-## How to Test the APIs
-
-- **Get all songs:**
-
-  Open your browser or a tool like Postman and go to:
-  `http://localhost:4000/api/songs`
-
-- **Get a single song by ID:**
-
-  `http://localhost:4000/api/songs/1`
-
-- **Download a song:**
-
-  `http://localhost:4000/api/download/song1.mp3`
+- HTML
+- CSS
+- JavaScript
+- Node.js
+- Express.js
+- Cors
