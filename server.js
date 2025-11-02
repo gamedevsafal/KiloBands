@@ -11,13 +11,18 @@ const app = express();
 const port = 4000;
 
 app.use(cors());
-app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname));
 
 const songs = [
   { id: 1, title: 'Song 1', artist: 'Artist 1', filename: 'song1.mp3' },
   { id: 2, title: 'Song 2', artist: 'Artist 2', filename: 'song2.mp3' },
   { id: 3, title: 'Song 3', artist: 'Artist 3', filename: 'song3.mp3' },
 ];
+
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'Home.html'));
+});
 
 app.get('/api/songs', (req, res) => {
   res.json(songs);
